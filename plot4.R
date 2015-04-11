@@ -6,7 +6,10 @@ tt=td$Time
 xt=paste(dd, tt) # form one variable, now a character
 xt = strptime(xt, "%Y-%m-%d %H:%M:%S")
 ylims = range( td$Sub_metering_1)
+
+# to create an array of plots
 par(mfrow = c(2, 2))
+# controls the size of the fonts; default is too big
 par(cex=0.6)
 # subplot 1
 plot(xt, td$Global_active_power, type="l", 
@@ -35,3 +38,5 @@ plot(xt, td$Global_reactive_power, type="l",
 
 dev.copy(png, file = "plot4.png", width=480, height=480 )
 dev.off()
+par(cex=1) # to not affect other plots later
+par(mfrow = c(1, 1))  # reset to default

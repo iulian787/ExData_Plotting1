@@ -6,13 +6,12 @@ tt=td$Time
 xt=paste(dd, tt) # form one variable, now a character
 xt = strptime(xt, "%Y-%m-%d %H:%M:%S")
 ylims = range( td$Sub_metering_1)
-par(cex=1)
 plot(xt, td$Sub_metering_1, type="l", ylim=ylims,
      ylab="Energy sub metering" , xlab="", col = "black")
-par(new=T)
+par(new=T)  # keep the plot, do not overwrite
 plot(xt, td$Sub_metering_2, type="l", ylim=ylims,
      ylab="" , xlab="", col = "red")
-par(new=T)
+par(new=T)  # as above, keep the plot
 plot(xt, td$Sub_metering_3, type="l", ylim=ylims,
      ylab="" , xlab="", col = "blue")
 legend("topright",  col = c("black", "red", "blue"), lwd=1,
