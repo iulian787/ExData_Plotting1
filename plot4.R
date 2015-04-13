@@ -23,12 +23,14 @@ plot(xt, td$Voltage, type="l",
 plot(xt, td$Sub_metering_1, type="l", ylim=ylims,
      ylab="Energy sub metering" , xlab="", col = "black")
 
-par(new=T)
-plot(xt, td$Sub_metering_2, type="l", ylim=ylims,
-     ylab="" , xlab="", col = "red")
-par(new=T)
-plot(xt, td$Sub_metering_3, type="l", ylim=ylims,
-     ylab="" , xlab="", col = "blue")
+#par(new=T)
+points(xt, td$Sub_metering_2, type="l", col = "red")
+#plot(xt, td$Sub_metering_2, type="l", ylim=ylims,
+#     ylab="" , xlab="", col = "red")
+points(xt, td$Sub_metering_3, type="l", col = "blue")
+#par(new=T)
+#plot(xt, td$Sub_metering_3, type="l", ylim=ylims,
+#    ylab="" , xlab="", col = "blue")
 legend("topright",  col = c("black", "red", "blue"), lwd=1,
        legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 
